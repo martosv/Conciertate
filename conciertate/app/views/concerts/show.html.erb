@@ -1,0 +1,38 @@
+<h3>
+  <strong>Band:</strong>
+  <%= @concert.band %>
+</h3>
+
+<p>
+  <strong>Venue:</strong>
+  <%= @concert.venue %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @concert.city %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @concert.date %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @concert.price %>
+</p>
+
+<p>
+<%= image_tag(@concert.photo, height: "300", width: "320", align: "center") %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @concert.description %>
+</p>
+
+<p>
+  <strong>Get tickets:</strong>
+  <%= @concert.tickets %>
+</p>
