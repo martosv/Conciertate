@@ -3,40 +3,42 @@
 </header>
 
 <body>
-    <aside>
-    <div class='sidebar'>
+    <aside class='sidebar'>
+    <div>
         <div class='later_concerts'> <h3>Later this month </h3></div>
         <div>
             <ul>
-                <li>
-                    <% @concerts.each do |concert|%>
-                        <% if concert.date > Time.now %>
-                        <%= concert.band %>
-                        <% end %>
+                <% @concerts.each do |concert|%>
+                    <% if concert.date > Time.now %>
+                    <li><%= concert.band %></li>
                     <% end %>
-                </li>
+                <% end %>
+                
             </ul>
         </div>
     </div>
     </aside>
 
-    <article class='indexarticle'>
-	<div>
-        <h1 align= "middle">Listing concerts</h1> 
-	    <% @concerts.each do |concert|%>
+    <article>
+    <div>
+        <h1 class='indexarticle'>Listing concerts</h1> 
+	
+    <section>
+        <% @concerts.each do |concert|%>
     	   <div>
-    	       <%= concert.band %>
-               <button type='button' id='like-button'> Like </button>
-    		   <%= link_to 'More info...',  concert_path(concert)%>
-    		   <%= link_to 'Edit', edit_concert_path(concert) %>
-    		   <%= link_to 'Delete', concert_path(concert), method: :delete, data: { confirm: 'Are you sure?' } %>
+    	        <%= concert.band %>
+                <%= link_to 'More info...',  concert_path(concert)%>
+    		    <%= link_to 'Edit', edit_concert_path(concert) %>
+    		    <%= link_to 'Delete', concert_path(concert), method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>
 	    <% end %>
+    
 
-        <p>
-            <%= link_to 'New concert', new_concert_path %>
-        </p>
+    <p>
+        <%= link_to 'New concert', new_concert_path %>
+    </p>
+    </section>
     </div>
     </article>
-
+    
 </body>
