@@ -12,3 +12,22 @@
 .liked {
   background-color: #42B1E5 !important;
 }
+
+.sidebar {
+	width: 300px;
+	height: auto;
+	box-shadow: grey 0 0 1px 0;
+	border-radius: 5px;
+	float: left;
+}
+
+.indexarticle {
+	float: left;
+}
+
+.later_concerts {
+	text-align: center;
+	background: blue;
+	border-radius: 5px;
+	padding: 0.5px;
+}
