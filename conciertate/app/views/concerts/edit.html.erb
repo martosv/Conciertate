@@ -1,4 +1,6 @@
-<%= form_for @concert do |f| %>
+<h1>Editing concert</h1>
+
+<%= form_for :concert, url: concert_path(@concert), method: :patch do |f| %>
   <% if @concert.errors.any? %>
     <h2> Errors: </h2>
     <ul>
@@ -21,7 +23,7 @@
   <p>
     <%= f.label :city %><br>
     <%= f.text_area :city %>
-  </p>
+  </p>  
 
   <p>
     <%= f.label :date %><br>
@@ -31,11 +33,6 @@
   <p>
     <%= f.label :price %><br>
     <%= f.text_area :price %>
-  </p>
-
-  <p class="stylemarino">
-   <%= f.label :photo %><br>
-   <%= f.file_field :photo %><br>
   </p>
 
   <p>
@@ -48,9 +45,9 @@
     <%= f.text_area :tickets %>
   </p>
 
-
-
   <p>
     <%= f.submit %>
   </p>
 <% end %>
+
+<%= link_to 'Back', concerts_path %>

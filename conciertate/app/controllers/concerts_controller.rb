@@ -17,14 +17,18 @@ class ConcertsController < ApplicationController
 
     def create
         @concert = Concert.new(concert_params)
-        @concert.save
-        redirect_to laptop_path(@concert)
+        
+        if @concert.save
+        redirect_to concert_path(@concert)
+        else
+           render :new
+        end
     end
 
     def update
         @concert = Concert.find(params[:id])
         @concert.update(concert_params)
-        redirect_to  laptop_path(@concert) #laptop_path es el metodo show al fin y al cabo
+        redirect_to concert_path(@concert) #laptop_path es el metodo show al fin y al cabo
     end
 
     def destroy

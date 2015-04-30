@@ -36,3 +36,10 @@
   <strong>Get tickets:</strong>
   <%= @concert.tickets %>
 </p>
+
+<button type='button' id='like-button'> Like </button>
+
+<p>
+    <%= link_to 'Edit', edit_concert_path(@concert)%> |
+    <%= link_to 'Back', concerts_path%>
+</p>
