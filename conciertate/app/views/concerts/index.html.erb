@@ -1,6 +1,8 @@
-<header>
-	<h1 align="middle">Welcome to Conciertate!</h1>
-</header>
+<!DOCUMENT html>
+<html>
+    <header>
+    	<h1 align="middle">Welcome to Conciertate!</h1>
+    </header>
 
 <body>
     <aside class='sidebar'>
@@ -19,6 +21,7 @@
     </div>
     </aside>
 
+
     <article>
     <div>
         <h1 class='indexarticle'>Listing concerts</h1> 
@@ -29,10 +32,9 @@
     	        <%= concert.band %>
                 <%= link_to 'More info...',  concert_path(concert)%>
     		    <%= link_to 'Edit', edit_concert_path(concert) %>
-    		    <%= link_to 'Delete', concert_path(concert), method: :delete, data: { confirm: 'Are you sure?' } %>
+    		    <%= link_to 'Delete', concert_path(concert), method: :delete, data: { confirm: 'Are you sure?' } %> <br><br>
             </div>
 	    <% end %>
-    
 
     <p>
         <%= link_to 'New concert', new_concert_path %>
@@ -42,3 +44,5 @@
     </article>
     
 </body>
+</html>
+

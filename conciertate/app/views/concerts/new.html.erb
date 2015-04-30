@@ -1,12 +1,19 @@
-<%= form_for(@concert, html: {multipart: true}) do |f| %>
-  <% if @concert.errors.any? %>
-    <h2> Errors: </h2>
-    <ul>
-      <% @concert.errors.full_messages.each do |message| %>
-        <li> <%= message %> </li>
-      <% end%>
-    </ul>
-  <% end %>
+<!DOCUMENT html>
+<html>
+
+<head>
+</head>
+
+<body>
+  <%= form_for(@concert, html: {multipart: true}) do |f| %>
+    <% if @concert.errors.any? %>
+      <h2> Errors: </h2>
+      <ul>
+        <% @concert.errors.full_messages.each do |message| %>
+          <li> <%= message %> </li>
+        <% end%>
+      </ul>
+    <% end %>
 
   <p>
     <%= f.label :band %><br>
@@ -52,8 +59,12 @@
   <p>
     <%= f.submit %>
   </p>
-<% end %>
+  
+  <% end %>
 
   <p>
     <%= link_to 'Back', concerts_path%>
   </p>
+
+</body>
+</html>

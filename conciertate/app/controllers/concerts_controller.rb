@@ -38,6 +38,11 @@ class ConcertsController < ApplicationController
         redirect_to root_path
     end
 
+    def like
+        @concert = Concert.find(params[:post_id])
+        @like = @concert.likes.count(params[:like])
+    end
+
     private # para aceptar solo los parametros que nos interesa o se quiere controlar
     def concert_params
         params.require(:concert).permit(:band, :venue, :city, :date, :price, :photo, :description, :tickets)

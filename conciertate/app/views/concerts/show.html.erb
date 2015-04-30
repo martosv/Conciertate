@@ -1,46 +1,60 @@
-<h3>
-  <strong>Band:</strong>
-  <%= @concert.band %>
-</h3>
+<!DOCUMENT html>
+<html>
 
-<p>
-  <strong>Venue:</strong>
-  <%= @concert.venue %>
-</p>
+<head>
+</head>
 
-<p>
-  <strong>City:</strong>
-  <%= @concert.city %>
-</p>
+<body>
 
-<p>
-  <strong>Date:</strong>
-  <%= @concert.date %>
-</p>
+  <h3>
+    <strong>Band:</strong>
+    <%= @concert.band %>
+  </h3>
 
-<p>
-  <strong>Price:</strong>
-  <%= @concert.price %>
-</p>
-
-<p>
-<%= image_tag(@concert.photo, height: "300", width: "320", align: "center") %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @concert.description %>
-</p>
-
-<p>
-  <strong>Get tickets:</strong>
-  <p>PURCHASE TICKETS ONLINE AT <%= link_to 'WWW.AXS.COM', @concert.tickets %> OR CHARGE TICKETS BY PHONE, CALL 888.929.7849. Tickets to this show are not available at the Denver Coliseum box office.
+  <p>
+    <strong>Venue:</strong>
+    <%= @concert.venue %>
   </p>
-</p>
 
-<button type='button' id='like-button'> Like </button>
+  <p>
+    <strong>City:</strong>
+    <%= @concert.city %>
+  </p>
 
-<p>
+  <p>
+    <strong>Date:</strong>
+    <%= @concert.date %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= @concert.price %>
+  </p>
+
+  <p>
+    <%= image_tag(@concert.photo, height: "300", width: "320", align: "center") %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @concert.description %>
+  </p>
+
+  <p>
+    <strong>Get tickets:</strong>
+    <p>PURCHASE TICKETS ONLINE AT <%= link_to 'WWW.AXS.COM', @concert.tickets %> OR CHARGE TICKETS BY PHONE, CALL 888.929.7849. Tickets to this show are not available at the Denver Coliseum box office.
+    </p>
+  </p>
+
+  <p>  
+    <button type='button' id='like-button'>Like this concert!</button>
+    <%= @like %>
+  </p> 
+
+  <p>
     <%= link_to 'Edit', edit_concert_path(@concert)%> |
     <%= link_to 'Back', concerts_path%>
-</p>
+  </p>
+
+</body>
+</html>
