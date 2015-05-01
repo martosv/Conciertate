@@ -9,7 +9,7 @@
      <% @concerts.each do |concert|%>
         <% if concert.date === Time.now.strftime("%d/%m/%Y") %>
         <br><br>
-        <h2 class='white'>   <%= concert.band %></h2>
+        <h2 class='white'><%= concert.band %></h2>
         <% end %>
     <% end %>
     <div>
