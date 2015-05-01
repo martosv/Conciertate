@@ -1,64 +1,76 @@
-<!DOCUMENT html>
-<html>
 
-<head>
-</head>
+<header></header>
 
-<body>
+<body>  
+  <nav>  
+    <ul class="menu">
+      <li><%= link_to 'Home', concerts_path%></li>
+      <li><%= link_to 'Edit', edit_concert_path(@concert) %></li>
+      <li><%= link_to "Like", :controller => :concerts, :action => :like %></li>
+    </ul>
+    <div class="clear"></div>   
+  </nav> 
 
-  <h3>
-    <strong>Band:</strong>
-    <%= @concert.band %>
-  </h3>
+  <section id="content"><div class="ic"></div>
+    <div class="container_12 top-4">
+      <div class="grid_12">
+          <div class="left-1">
+              <h2 class="p5"><%= @concert.band %></h2>
+                <div class="wrap">
+                  <div class="img-indent-2"><%= image_tag(@concert.photo) %></div>
+                  <div class="extra-wrap">
+                    <p class="p">
+                      <%= @concert.description %>
+                      
+                    </p>
+                  </div>
+                </div>
+                <h2 class="p5 top-5">Information</h2>
+                <div class="lists">
+                  <ul class="list-2">
+                    <li>Venue: <%= @concert.venue %></li>
+                    <li>City: <%= @concert.city %></li>
+                    <li>Date: <%= @concert.date %></li>
+                    <li>Price: <%= @concert.price %></li>
+                    <li>PURCHASE TICKETS ONLINE AT <%= link_to 'HERE', @concert.tickets %> OR CHARGE TICKETS BY PHONE, CALL 888.929.7849. Tickets to this show are not available at the Denver Coliseum box office.</li>
+                    <li><strong>Likes:</strong><%= @concert.likes %></li>
+                  </ul>
+                </div>
+          </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </section>
+  <!--==============================footer=================================-->
 
-  <p>
-    <strong>Venue:</strong>
-    <%= @concert.venue %>
-  </p>
-
-  <p>
-    <strong>City:</strong>
-    <%= @concert.city %>
-  </p>
-
-  <p>
-    <strong>Date:</strong>
-    <%= @concert.date %>
-  </p>
-
-  <p>
-    <strong>Price ($):</strong>
-    <%= @concert.price %>
-  </p>
-
-  <p>
-    <%= image_tag(@concert.photo, height: "300", width: "320", align: "center") %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= @concert.description %>
-  </p>
-
-  <p>
-    <strong>Get tickets:</strong>
-    <p>PURCHASE TICKETS ONLINE <%= link_to 'HERE', @concert.tickets %> OR CHARGE TICKETS BY PHONE, CALL 888.929.7849. Tickets to this show are not available at the Denver Coliseum box office.
-    </p>
-  </p>
-
-    <p>  
-      <%= link_to "like", :controller => :concerts, :action => :like %>
-    </p>
-
-    <p>
-      <strong>Likes:</strong>
-      <%= @concert.likes %>
-    </p> 
-
-  <p>
-    <%= link_to 'Edit', edit_concert_path(@concert)%> |
-    <%= link_to 'Back', concerts_path%>
-  </p>
-
+  <footer>
+    <div class="footer-col-1">
+      <h3>Why Us</h3>
+      <ul class="list-1">
+        <li>By our happy coding</li>
+        <li>By our younger thinking</li>
+        <li>And cause you want to go to a CONCERT!</li>
+      </ul>
+    </div>
+    <div class="footer-col-2">
+      <h3>Address</h3>
+      <dl class="adrss">
+        <dd><span>Country:</span>Spain</dd>
+        <dd><span>City:</span>Madrid</dd>
+        <dd><span>Email:</span><a href="#" class="link">team6@ironhack.com</a></dd>
+      </dl> 
+    </div>  
+    <div class="footer-col-3">
+      <h3>Newsletter</h3>
+      <form id="form-search" method="post">
+        <input type="text" value="" onBlur="if(this.value=='') this.value=''" onFocus="if(this.value =='' ) this.value=''"  /><a href="#" onClick="document.getElementById('form-search').submit()"></a>
+      </form>
+    </div>  
+    <div class="footer-col-4">
+      <p>
+        © 2015 Ironhack 
+        <a rel="nofollow" href="http://www.ironhack.com/" target="_blank" class="link">Website</a> by Ironhack
+      </p>
+    </div>  
+  </footer>
 </body>
-</html>
