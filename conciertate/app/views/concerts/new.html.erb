@@ -6,80 +6,57 @@
 </nav>
 
 <body>
-  <section id="content"><div class="ic"></div>
-
+  <section id="content">
 
     <%= form_for(@concert, html: {multipart: true}) do |f| %>
       
-      <% if @concert.errors.any? %>
+      <div class="error"><% if @concert.errors.any? %>
         <h2> Errors: </h2>
-        <ul>
+        
           <% @concert.errors.full_messages.each do |message| %>
-            <li> <%= message %> </li>
-          <% end%>
-        </ul>
-      <% end %>
+            <%= message %><br>
+          <% end%> 
+      <% end %></div>
       
       <h2 class="p5 top-5">Information</h2>
-      <div class="lists">
-        <ul class="list-2">
-          <li>
-            <p>
+      <div class="p">    
+          <p>
               <%= f.label :band %><br>
               <%= f.text_field :band %>
-            </p>
-          </li>
-          <li>    
-            <p>
+          </p>    
+          <p>
               <%= f.label :venue %><br>
               <%= f.text_area :venue %>
-            </p>
-          </li>
-          <li>
-            <p>
+          </p>
+          <p>
               <%= f.label :city %><br>
               <%= f.text_area :city %>
-            </p>
-          </li>
-          <li>
-            <p>
+          </p>
+          <p>
               <%= f.label :date %><br>
               <%= f.date_select :date %>
-            </p>
-          </li>
-          <li>
-            <p>
+          </p>
+          <p>
               <%= f.label :price %><br>
-              <%= f.text_area :price %> $
-            </p>
-          </li>
-          <li>
-            <p>
+              <%= f.text_area :price %>$
+          </p>
+          <p>
               <%= f.label :photo %><br>
               <p> <%= f.text_area :photo %> Enter the URL </p>
-            </p>
-          </li>
-          <li>
-            <p>
+          </p>
+          <p>
               <%= f.label :description %><br>
               <%= f.text_area :description %>
-            </p>
-          </li>
-          <li>
-            <p>
+          </p>
+          <p>
               <%= f.label :tickets %><br>
               <%= f.text_area :tickets %>
-            </p>
-          </li>
-          <li>
-            <p>
+          </p>
+          <p>
               <div class="button top-3"><%= f.submit %></div>
-            </p>
-          </li>
-        </ul>
+          </p>
       </div>
     <% end %>
-    <div class="clear"></div>
   </section>
 
   <footer>
