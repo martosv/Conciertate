@@ -13,79 +13,67 @@
 
 <body>
   <section id="content">
+<<<<<<< HEAD
 
+=======
+>>>>>>> e8a0f0c7888e5a2940dbfaa2091dfb81bc2f3ad2
 
     <%= form_for(@concert, html: {multipart: true}) do |f| %>
       
-      <% if @concert.errors.any? %>
+      <div class="error"><% if @concert.errors.any? %>
         <h2> Errors: </h2>
-        <ul>
+        
           <% @concert.errors.full_messages.each do |message| %>
+<<<<<<< HEAD
             <li> <%= message %></li>
           <% end%>
         </ul>
       <% end %>
+=======
+            <%= message %><br>
+          <% end%> 
+      <% end %></div>
+>>>>>>> e8a0f0c7888e5a2940dbfaa2091dfb81bc2f3ad2
       
       <h2 class="p5 top-5">Information</h2>
-      <div class="lists">
-        <ul class="list-2">
-          <li>
-            <p>
+      <div class="p">    
+          <p>
               <%= f.label :band %><br>
               <%= f.text_field :band %>
-            </p>
-          </li>
-          <li>    
-            <p>
+          </p>    
+          <p>
               <%= f.label :venue %><br>
               <%= f.text_area :venue %>
-            </p>
-          </li>
-          <li>
-            <p>
+          </p>
+          <p>
               <%= f.label :city %><br>
               <%= f.text_area :city %>
-            </p>
-          </li>
-          <li>
-            <p>
+          </p>
+          <p>
               <%= f.label :date %><br>
               <%= f.date_select :date %>
-            </p>
-          </li>
-          <li>
-            <p>
+          </p>
+          <p>
               <%= f.label :price %><br>
-              <%= f.text_area :price %> $
-            </p>
-          </li>
-          <li>
-            <p>
+              <%= f.text_area :price %>$
+          </p>
+          <p>
               <%= f.label :photo %><br>
               <p> <%= f.text_area :photo %> Enter the URL </p>
-            </p>
-          </li>
-          <li>
-            <p>
+          </p>
+          <p>
               <%= f.label :description %><br>
               <%= f.text_area :description %>
-            </p>
-          </li>
-          <li>
-            <p>
+          </p>
+          <p>
               <%= f.label :tickets %><br>
               <%= f.text_area :tickets %>
-            </p>
-          </li>
-          <li>
-            <p>
+          </p>
+          <p>
               <div class="button top-3"><%= f.submit %></div>
-            </p>
-          </li>
-        </ul>
+          </p>
       </div>
     <% end %>
-    <div class="clear"></div>
   </section>
 
   <!--==============================footer=================================-->
@@ -108,10 +96,11 @@
       </dl> 
     </div>  
     <div class="footer-col-3">
-      <h3>Newsletter</h3>
-      <form id="form-search" method="post">
-        <input type="text" value="" onBlur="if(this.value=='') this.value=''" onFocus="if(this.value =='' ) this.value=''"  /><a href="#" onClick="document.getElementById('form-search').submit()"></a>
-      </form>
+      <h3>Team Members</h3>
+      <ul class="list-1">
+        <li>Juan Pablo Marin</li>
+        <li>Virginia Martos</li>
+        <li>Marcos Vazquez</li>
     </div>  
     <div class="footer-col-4">
       <p>

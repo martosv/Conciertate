@@ -2,7 +2,11 @@
   background-color: #42B1E5 !important;
 }
 
+<<<<<<< HEAD
 .fondo {
+=======
+nav  {
+>>>>>>> e8a0f0c7888e5a2940dbfaa2091dfb81bc2f3ad2
    background: url("slider.png");
    background-size: 900px 600px;
    
@@ -41,4 +45,46 @@
 .margen {
 	margin: 5px;
 }
+
+/**********************slider**********************/
+
+
+.form_container {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.left, .right {
+  position: absolute;
+  top: 50%;
+  font-size: 4em;
+  height: 60px;
+  width: 60px;
+  line-height:50px;
+  border: none;
+  color: #f7f7f7;
+  background-color: #ef6f53;
+  border-radius: 100px;
+}
+.left {
+  left: 0px;
+}
+.right {
+  right: 0px;
+}
+.form_container .slideContainer {
+  white-space: nowrap;
+}
+
+.form_container .slideContainer .slide {
+  display: inline-block;
+  margin-right: -4px;
+  vertical-align: top;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 20%;
+}
+
+/**********************fin slider**********************/
 
