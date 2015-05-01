@@ -39,8 +39,11 @@ class ConcertsController < ApplicationController
     end
 
     def like
-        @concert = Concert.find(params[:post_id])
-        @like = @concert.likes.count(params[:like])
+        @concert = Concert.find(params[:id])
+        @concert.likes += 1
+        @concert.save
+
+        render :show
     end
 
     private # para aceptar solo los parametros que nos interesa o se quiere controlar
