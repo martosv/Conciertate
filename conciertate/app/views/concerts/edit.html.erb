@@ -1,69 +1,113 @@
-<!DOCUMENT html>
-<html>
-
-<head>
-</head>
-
 <body>
 
-  <h1>Editing concert</h1>
+  <nav>  
+    <ul class="menu">
+      <li><%= link_to 'Home', concerts_path%></li>
+    </ul>
+    <div class="clear"></div>   
+  </nav>
 
-  <%= form_for :concert, url: concert_path(@concert), method: :patch do |f| %>
-    <% if @concert.errors.any? %>
-      <h2> Errors: </h2>
-      <ul>
-        <% @concert.errors.full_messages.each do |message| %>
-          <li> <%= message %> </li>
-        <% end%>
-      </ul>
+  <section id="content"><div class="ic"></div>
+
+    <%= form_for :concert, url: concert_path(@concert), method: :patch do |f| %>
+      <% if @concert.errors.any? %>
+        <h2> Errors: </h2>
+        <ul>
+          <% @concert.errors.full_messages.each do |message| %>
+            <li> <%= message %> </li>
+          <% end%>
+        </ul>
+      <% end %>
+
+      <h2 class="p5 top-5">Information</h2>
+      <div class="lists">
+        <ul class="list-2">
+          <li>
+            <p>
+              <%= f.label :band %><br>
+              <%= f.text_field :band %>
+            </p>
+          </li>
+          <li>
+            <p>
+              <%= f.label :venue %><br>
+              <%= f.text_area :venue %>
+            </p>
+          </li>
+          <li>
+            <p>
+              <%= f.label :city %><br>
+              <%= f.text_area :city %>
+            </p>
+          </li>  
+          <li>
+            <p>
+              <%= f.label :date %><br>
+              <%= f.text_area :date %>
+            </p>
+          </li>
+          <li>
+            <p>
+              <%= f.label :price %><br>
+              <%= f.text_area :price %>
+            </p>
+          </li>
+          <li>
+            <p>
+              <%= f.label :photo %><br>
+              <p> <%= f.text_area :photo %> Enter the URL </p>
+            </p>
+          </li>
+          <li>
+            <p>
+              <%= f.label :description %><br>
+              <%= f.text_area :description %>
+            </p>
+          </li>
+          <li>
+            <p>
+              <%= f.label :tickets %><br>
+              <%= f.text_area :tickets %>
+            </p>
+          </li>
+          <li>
+            <p>
+              <div class="button top-3"><%= f.submit %></div>
+            </p>
+          </li>
+        </ul>
+      </div>
     <% end %>
-
-  <p>
-    <%= f.label :band %><br>
-    <%= f.text_field :band %>
-  </p>
-
-  <p>
-    <%= f.label :venue %><br>
-    <%= f.text_area :venue %>
-  </p>
-
-  <p>
-    <%= f.label :city %><br>
-    <%= f.text_area :city %>
-  </p>  
-
-  <p>
-    <%= f.label :date %><br>
-    <%= f.date_select :date %>
-  </p>
-  
-  <p>
-    <%= f.label :price %><br>
-    <%= f.text_area :price %>
-  </p>
-
-  <p >
-    <%= f.label :photo %><br>
-    <p> <%= f.text_area :photo %> Enter the URL </p>
-  </p>
-
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </p>
-
-  <p>
-    <%= f.label :tickets %><br>
-    <%= f.text_area :tickets %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-  <% end %>
-
-  <%= link_to 'Back', concerts_path %>
-
+    <div class="clear"></div>
+  </section>
+  <footer>
+    <div class="footer-col-1">
+      <h3>Why Us</h3>
+      <ul class="list-1">
+        <li>By our happy coding</li>
+        <li>By our younger thinking</li>
+        <li>And cause you want to go to a CONCERT!</li>
+      </ul>
+    </div>
+    <div class="footer-col-2">
+      <h3>Address</h3>
+      <dl class="adrss">
+        <dd><span>Country:</span>Spain</dd>
+        <dd><span>City:</span>Madrid</dd>
+        <dd><span>Email:</span><a href="#" class="link">team6@webdevelopers.com</a></dd>
+      </dl> 
+    </div>  
+    <div class="footer-col-3">
+      <h3>Newsletter</h3>
+      <form id="form-search" method="post">
+        <input type="text" value="" onBlur="if(this.value=='') this.value=''" onFocus="if(this.value =='' ) this.value=''"  /><a href="#" onClick="document.getElementById('form-search').submit()"></a>
+      </form>
+    </div>  
+    <div class="footer-col-4">
+      <p>
+        © 2015 Ironhack 
+        <a rel="nofollow" href="http://www.ironhack.com/" target="_blank" class="link">Website</a> by Ironhack
+      </p>
+    </div>  
+  </footer>
 </body>
-</html>
