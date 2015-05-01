@@ -1,8 +1,20 @@
 <!DOCUMENT html>
 <html>
-    <header>
-    	<h1 align="middle">Welcome to Conciertate!</h1>
-    </header>
+<header>
+   	<h1 align="middle">Welcome to Conciertate!</h1>
+</header>
+
+<nav>
+    <div class='slider'>
+     <% @concerts.each do |concert|%>
+        <% if concert.date === Time.now.strftime("%d/%m/%Y") %>
+        <br><br>
+        <h2 class='white'>   <%= concert.band %></h2>
+        <% end %>
+    <% end %>
+    <div>
+
+</nav>
 
 <body>
     <aside class='sidebar'>
