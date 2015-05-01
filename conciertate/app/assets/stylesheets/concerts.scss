@@ -13,16 +13,33 @@
   background-color: #42B1E5 !important;
 }
 
+nav {
+   background: url("slider.png");
+   background-size: 900px 600px;
+   
+}
+
+.slider {
+	widht: 100%;
+	height: 200px;
+}
+
 .sidebar {
-	width: 300px;
+	width: 250px;
 	height: auto;
 	box-shadow: grey 0 0 1px 0;
 	border-radius: 5px;
 	float: left;
+	hight: 100%;
 }
 
+.white {
+	color: white;
+} 
+
+
 .indexarticle {
-	float: left;
+	text-align: center;
 }
 
 .later_concerts {
@@ -31,3 +48,8 @@
 	border-radius: 5px;
 	padding: 0.5px;
 }
+
+.margen {
+	margin: 5px;
+}
+

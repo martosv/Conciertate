@@ -1,14 +1,22 @@
-<h1>Editing concert</h1>
+<!DOCUMENT html>
+<html>
 
-<%= form_for :concert, url: concert_path(@concert), method: :patch do |f| %>
-  <% if @concert.errors.any? %>
-    <h2> Errors: </h2>
-    <ul>
-      <% @concert.errors.full_messages.each do |message| %>
-        <li> <%= message %> </li>
-      <% end%>
-    </ul>
-  <% end %>
+<head>
+</head>
+
+<body>
+
+  <h1>Editing concert</h1>
+
+  <%= form_for :concert, url: concert_path(@concert), method: :patch do |f| %>
+    <% if @concert.errors.any? %>
+      <h2> Errors: </h2>
+      <ul>
+        <% @concert.errors.full_messages.each do |message| %>
+          <li> <%= message %> </li>
+        <% end%>
+      </ul>
+    <% end %>
 
   <p>
     <%= f.label :band %><br>
@@ -35,6 +43,11 @@
     <%= f.text_area :price %>
   </p>
 
+  <p >
+    <%= f.label :photo %><br>
+    <p> <%= f.text_area :photo %> Enter the URL </p>
+  </p>
+
   <p>
     <%= f.label :description %><br>
     <%= f.text_area :description %>
@@ -48,6 +61,9 @@
   <p>
     <%= f.submit %>
   </p>
-<% end %>
+  <% end %>
 
-<%= link_to 'Back', concerts_path %>
+  <%= link_to 'Back', concerts_path %>
+
+</body>
+</html>

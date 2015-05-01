@@ -1,42 +1,60 @@
 <!DOCUMENT html>
-    <header>
-    	<h1 align="middle">Welcome to Conciertate!</h1>
-    </header>
+<html>
+<header>
+   	<h1 align="middle">Welcome to Conciertate!</h1>
+</header>
 
-    <body>
-        <aside>
-        <div class='sidebar'>
-            <div class='later_concerts'> <h3>Later this month </h3></div>
-            <div>
-                <ul>
-                    <li>
-                        <% @concerts.each do |concert|%>
-                            <% if concert.date > Time.now %>
-                            <%= concert.band %>
-                            <% end %>
-                        <% end %>
-                    </li>
-                </ul>
+<nav>
+    <div class='slider'>
+     <% @concerts.each do |concert|%>
+        <% if concert.date === Time.now.strftime("%d/%m/%Y") %>
+        <br><br>
+        <h2 class='white'>   <%= concert.band %></h2>
+        <% end %>
+    <% end %>
+    <div>
+
+</nav>
+
+<body>
+    <aside class='sidebar'>
+    <div>
+        <div class='later_concerts'> <h3>Later this month </h3></div>
+        <div>
+            <ul>
+                <% @concerts.each do |concert|%>
+                    <% if concert.date > Time.now %>
+                    <li><%= concert.band %></li>
+                    <% end %>
+                <% end %>
+                
+            </ul>
+        </div>
+    </div>
+    </aside>
+
+
+    <article>
+    <div>
+        <h1 class='indexarticle'>Listing concerts</h1> 
+	
+    <section>
+        <% @concerts.each do |concert|%>
+    	   <div>
+    	        <%= concert.band %>
+                <%= link_to 'More info...',  concert_path(concert)%>
+    		    <%= link_to 'Edit', edit_concert_path(concert) %>
+    		    <%= link_to 'Delete', concert_path(concert), method: :delete, data: { confirm: 'Are you sure?' } %> <br><br>
             </div>
-        </div>
-        </aside>
+	    <% end %>
 
-        <article class='indexarticle'>
-    	<div>
-            <h1 align= "middle">Listing concerts</h1> 
-    	    <% @concerts.each do |concert|%>
-        	   <div>
-        	       <%= concert.band %>
-        		   <%= link_to 'More info...', concert_path(concert)%>
-        		   <%= link_to 'Edit', edit_concert_path(concert) %>
-        		   <%= link_to 'Delete', concert_path(concert), method: :delete, data: { confirm: 'Are you sure?' } %>
-                </div>
-    	    <% end %>
+    <p>
+        <%= link_to 'New concert', new_concert_path %>
+    </p>
+    </section>
+    </div>
+    </article>
+    
+</body>
+</html>
 
-            <p>
-                <%= link_to 'New concert', new_concert_path %>
-            </p>
-        </div>
-        </article>
-
-    </body>

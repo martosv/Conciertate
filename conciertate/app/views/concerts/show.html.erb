@@ -1,50 +1,52 @@
 <!DOCUMENT html>
-
 <html>
-  <head>
 
-  </head>
+<head>
+</head>
 
-  <body>
-    <h3>
-      <strong>Band:</strong>
-      <%= @concert.band %>
-    </h3>
+<body>
 
-    <p>
-      <strong>Venue:</strong>
-      <%= @concert.venue %>
-    </p>
+  <h3>
+    <strong>Band:</strong>
+    <%= @concert.band %>
+  </h3>
 
-    <p>
-      <strong>City:</strong>
-      <%= @concert.city %>
-    </p>
+  <p>
+    <strong>Venue:</strong>
+    <%= @concert.venue %>
+  </p>
 
-    <p>
-      <strong>Date:</strong>
-      <%= @concert.date %>
-    </p>
+  <p>
+    <strong>City:</strong>
+    <%= @concert.city %>
+  </p>
 
-    <p>
-      <strong>Price:</strong>
-      <%= @concert.price %>
-    </p>
+  <p>
+    <strong>Date:</strong>
+    <%= @concert.date %>
+  </p>
 
-    <p>
+  <p>
+    <strong>Price:</strong>
+    <%= @concert.price %>
+  </p>
+
+  <p>
     <%= image_tag(@concert.photo, height: "300", width: "320", align: "center") %>
-    </p>
+  </p>
 
-    <p>
-      <strong>Description:</strong>
-      <%= @concert.description %>
-    </p>
+  <p>
+    <strong>Description:</strong>
+    <%= @concert.description %>
+  </p>
 
-    <p>
-      <strong>Get tickets:</strong>
-      <%= link_to '@concert.tickets', @concert.tickets %>
+  <p>
+    <strong>Get tickets:</strong>
+    <p>PURCHASE TICKETS ONLINE AT <%= link_to 'WWW.AXS.COM', @concert.tickets %> OR CHARGE TICKETS BY PHONE, CALL 888.929.7849. Tickets to this show are not available at the Denver Coliseum box office.
     </p>
+  </p>
 
+<<<<<<< HEAD
     <p>  
       <%= link_to "like", :controller => :concerts, :action => :like %>
     </p>
@@ -54,10 +56,10 @@
       <%= @concert.likes %>
     </p> 
 
+  <p>
+    <%= link_to 'Edit', edit_concert_path(@concert)%> |
+    <%= link_to 'Back', concerts_path%>
+  </p>
 
-    <p>
-      <%= link_to 'Edit', edit_concert_path(@concert)%> |
-      <%= link_to 'Back', concerts_path%>
-    </p>
-  </body>
+</body>
 </html>
