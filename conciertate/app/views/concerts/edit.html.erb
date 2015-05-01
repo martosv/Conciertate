@@ -13,8 +13,8 @@
     <div class="clear"></div>   
   </nav>
 
-  <section id="content"><div class="ic"></div>
-
+  <section class="content">
+    <div>
     <%= form_for :concert, url: concert_path(@concert), method: :patch do |f| %>
       <% if @concert.errors.any? %>
         <h2> Errors: </h2>
@@ -24,6 +24,7 @@
           <% end%>
         </ul>
       <% end %>
+    </div>  
 
       <h2 class="p5 top-5">Information</h2>
       <div class="lists">
@@ -121,3 +122,4 @@
     </div>  
   </footer>
 </body>
+

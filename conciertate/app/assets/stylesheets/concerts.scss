@@ -84,3 +84,20 @@
 
 /**********************fin slider**********************/
 
+
+.column-left{ float: left; width: 33%; }
+.column-right{ float: right; width: 33%; }
+.column-center{ display: inline-block; width: 33%; }
+.double-column-right{ float:right; width:50%}
+.double-column-left{ float:left; width:50%}
+.single-column{ display: inline-block; width: 100%}
+
+#sidebar {
+float:right;
+width:25%;
+}
+
+#main {
+float:left;
+width:75%;
+}
