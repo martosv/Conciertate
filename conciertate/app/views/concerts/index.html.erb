@@ -5,17 +5,28 @@
             <a href="http://localhost:3000/concerts"><img src="logo.png" alt="Concertiate" title="Welcome to concertiate!"/>
         </div>
     </header>
-        
-    <!--<nav>    
-        <div class='slider'>
-            <% @concerts.each do |concert|%>
-                <% if concert.date === Time.now.strftime("%d/%m/%Y") %>
-                    <br><br>
-                    <h2 class='white'><%= concert.band %></h2>
-                <% end %>
-            <% end %>
-        <div>
-    </nav>-->
+
+    <!-- ======================== inicio slider ======================== -->
+
+    <div class='form_container '>
+        <div class="slideContainer">
+
+            <a href="http://localhost:3000/concerts/1" style='text-decoration:underline;'>
+                <div class="slide" data-background='/assets/slide1.jpg'>
+                </div>
+            </a>
+
+            <a href="http://localhost:3000/concerts/2" style='text-decoration:underline;'>
+                <div class="slide" data-background='/assets/slide2.jpg'>
+                </div>
+            </a>
+        </div>
+        <button class="left"> &#60; </button>
+        <button class="right">&#62;</button>
+    </div>
+    <script src='http://code.jquery.com/jquery-latest.js'></script>
+
+    <!-- ======================== fin slider ======================== -->
     
     <section id="content"><div class="ic"></div>
         <div class="container_12 top-1">
@@ -29,7 +40,7 @@
             </div>
 
             <div class="grid_4">
-                <h2 class="p2">CONCERTS</h2>    
+                <h2 class="p2">Concerts</h2>    
                 <% @concerts.each do |concert|%>
                     <div class="wrap border-bot-1">
                         <%= concert.band %>
@@ -42,7 +53,7 @@
             </div>       
             <div class="grid_4">
                 <div class="left-2">
-                    <h2 class="p4">Recent Events</h2>
+                    <h2 class="p4">Featured Events!</h2>
                         <div class="wrap border-bot-1">
                             <% @concerts.each do |concert|%>
                                 <div class="wrap border-bot-1">
@@ -57,11 +68,12 @@
             <div class="clear"></div>
         </div>
     </section> 
+    <section id="content"><div class="ic"></div>
+        <div class="container_12 top-1">
 
 <!--==============================footer=================================-->
 
     <footer>
-
         <div class="footer-col-1">
             <h3>Why Us</h3>
             <ul class="list-1">
