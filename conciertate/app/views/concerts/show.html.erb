@@ -35,8 +35,8 @@
                     <li>Venue: <%= @concert.venue %></li>
                     <li>City: <%= @concert.city %></li>
                     <li>Date: <%= @concert.date %></li>
-                    <li>Price: <%= @concert.price %></li>
-                    <li>PURCHASE TICKETS ONLINE AT <%= link_to 'HERE', @concert.tickets %> OR CHARGE TICKETS BY PHONE, CALL 888.929.7849. Tickets to this show are not available at the Denver Coliseum box office.</li>
+                    <li>Price: <%= @concert.price %> $</li>
+                    <li>PURCHASE TICKETS ONLINE <%= link_to 'HERE', @concert.tickets %> OR CHARGE TICKETS BY PHONE, CALL 888.929.7849. Tickets to this show are not available at the Denver Coliseum box office.</li>
                     <li><strong>Likes:</strong><%= @concert.likes %></li>
                   </ul>
                 </div>

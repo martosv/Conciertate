@@ -52,9 +52,12 @@
                     <h2 class="p4">Today Concerts!</h2>
                     <% @concerts.each do |concert|%>
                         <% if concert.date === Date.today %><br><br>
-                        <h4 class='white'><%= concert.band %></h4>
+                        <h5 class='white'><%= concert.band %></h5>
+                        <% else %>
+                        <h5>There are no concerts today!</h5>
+                        <% break %>
                         <% end %>
-                <% end %>
+                    <% end %>
                 </div>
             </div>   
 
@@ -104,13 +107,13 @@
         <h2 class= "single-column" class="p2">Top 10 Concerts</h2>
             <% hash ={} %>
             <% @concerts.each do |x| %>    
-            <%    hash[x.band] = x.likes %>
+            <% hash[x.band] = x.likes %>
             <% end %>
 
             <% hash2 = hash.sort_by {|x,y| y} %>
             <% hash2.reverse! %>
-
-            <% hash2.each do |x, y| %>    
+            <% better_concerts = hash2.delete_if{|key,value| hash2.length > 10} %>
+            <% better_concerts.each do |x, y| %>  
                 <li><%= x %> : <%= y %> likes </li>
             <%end%>
     </div> 
