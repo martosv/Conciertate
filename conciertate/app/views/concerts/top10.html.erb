@@ -1,0 +1,62 @@
+<header>
+    <div align="middle">
+      <a href="http://localhost:3000/concerts"><img src="/assets/logo.png" alt="Concertiate" title="Welcome to concertiate!"/>
+    </div>
+  </header>
+
+<nav>  
+  <ul class="menu">
+    <li><%= link_to 'Home', concerts_path%></li>
+  </ul>
+  <div class="clear"></div>   
+</nav>
+
+<!--==============================header=================================-->
+
+<body>
+  <section>
+    </div>
+        <div>
+            <h2 class="p2">TOP 10 CONCERTS</h2>    
+              <% likes_concert[@concert.likes].each do |concert|%>
+                <div class="wrap border-bot-1">
+                  <%= concert %>
+                </div>
+              <% end %> 
+        </div>
+    </div>
+  </section>
+
+  <!--==============================footer=================================-->
+
+  <footer>
+    <div class="footer-col-1">
+      <h3>Why Us</h3>
+      <ul class="list-1">
+        <li>By our happy coding</li>
+        <li>By our younger thinking</li>
+        <li>And cause you want to go to a CONCERT!</li>
+      </ul>
+    </div>
+    <div class="footer-col-2">
+      <h3>Address</h3>
+      <dl class="adrss">
+        <dd><span>Country:</span>Spain</dd>
+        <dd><span>City:</span>Madrid</dd>
+        <dd><span>Email:</span><a href="#" class="link">team6@webdevelopers.com</a></dd>
+      </dl> 
+    </div>  
+    <div class="footer-col-3">
+      <h3>Newsletter</h3>
+      <form id="form-search" method="post">
+        <input type="text" value="" onBlur="if(this.value=='') this.value=''" onFocus="if(this.value =='' ) this.value=''"  /><a href="#" onClick="document.getElementById('form-search').submit()"></a>
+      </form>
+    </div>  
+    <div class="footer-col-4">
+      <p>
+        © 2015 Ironhack 
+        <a rel="nofollow" href="http://www.ironhack.com/" target="_blank" class="link">Website</a> by Ironhack
+      </p>
+    </div>  
+  </footer>
+</body>

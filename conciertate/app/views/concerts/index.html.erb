@@ -1,5 +1,12 @@
 <body>
+    
 
+    <header>
+        <div align="middle">
+            <a href="http://localhost:3000/concerts"><img src="logo.png" alt="Concertiate" title="Welcome to concertiate!"/>
+        </div>
+    </header>
+        
     <nav>
         <div class='fondo'>
             <% @concerts.each do |concert|%>
@@ -10,30 +17,21 @@
             <% end %>
         <div>
     </nav>
+
     
-    <section id="content"><div class="ic"></div>
-        <div class="container_12 top-1">
+    <section class="content1">
+        <div class="content1">
+        <div class="container_13 top-1">
         
             <div class="grid_4">
-                <h2 class="p2">Welcome to Conciertate!</h2>
+                <h2 class="p2">What is Conciertate?</h2>
                 
                 <p class="text-1 top-2 p3">The new app for music lovers</p>
                 <p>Conciertate show you a concerts callendar for the next months</p>
                 <p class="button top-3"><%= link_to 'New concert', new_concert_path %></p>
+            
             </div>
 
-            <div class="grid_4">
-                <h2 class="p2">CONCERTS</h2>    
-                <% @concerts.each do |concert|%>
-                    <div class="wrap border-bot-1">
-                        <%= concert.band %>
-                        
-                        <p class="button top-3"><%= link_to 'More info...',  concert_path(concert)%></p>
-                        <p class="button top-3"><%= link_to 'Edit', edit_concert_path(concert) %></p>
-                        <p class="button top-3"><%= link_to 'Delete', concert_path(concert), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-                    </div>
-                <% end %> 
-            </div>       
             <div class="grid_4">
                 <div class="left-2">
                     <h2 class="p4">Recent Events</h2>
@@ -47,10 +45,34 @@
                             <% end %>
                         </div>
                 </div>
-            </div>       
-            <div class="clear"></div>
+            </div> 
+
+            <div class="grid_4">
+                <h2 class="p2">Top 10 Concerts</h2>
+                
+                <p class="button top-3"><%= link_to 'Top 10 Concerts', top10_concert_path %></p>
+            </div>
+        </div>
         </div>
     </section> 
+
+    <section class="content1">   
+    <div class="content1">
+        <div>
+            <h2 class="p2">CONCERTS</h2>    
+                <% @concerts.each do |concert|%>
+                    <div class="wrap border-bot-1">
+                        <%= concert.band %><br>
+                        <%= image_tag(concert.photo) %><br>
+                        
+                        <p class="button top-3"><%= link_to 'More info...',  concert_path(concert)%></p>
+                        <p class="button top-3"><%= link_to 'Edit', edit_concert_path(concert) %></p>
+                        <p class="button top-3"><%= link_to 'Delete', concert_path(concert), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                    </div>
+                <% end %> 
+        </div>
+    </div>
+    </section>       
 
 <!--==============================footer=================================-->
 

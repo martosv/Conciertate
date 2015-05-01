@@ -1,3 +1,9 @@
+  <header>
+    <div align="middle">
+      <a href="http://localhost:3000/concerts"><img src="/assets/logo.png" alt="Concertiate" title="Welcome to concertiate!"/>
+    </div>
+  </header>
+
 <nav>  
   <ul class="menu">
     <li><%= link_to 'Home', concerts_path%></li>
@@ -15,7 +21,7 @@
         <h2> Errors: </h2>
         <ul>
           <% @concert.errors.full_messages.each do |message| %>
-            <li> <%= message %> </li>
+            <li> <%= message %></li>
           <% end%>
         </ul>
       <% end %>
@@ -81,6 +87,8 @@
     <% end %>
     <div class="clear"></div>
   </section>
+
+  <!--==============================footer=================================-->
 
   <footer>
     <div class="footer-col-1">
