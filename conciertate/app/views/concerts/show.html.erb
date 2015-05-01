@@ -46,8 +46,12 @@
     </p>
 
     <p>  
-      <button type='button' id='like-button'>Like this concert!</button>
-      <%= @like %>
+      <%= link_to "like", :controller => :concerts, :action => :like %>
+    </p>
+
+    <p>
+      <strong>Likes:</strong>
+      <%= @concert.likes %>
     </p> 
 
 
