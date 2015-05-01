@@ -13,10 +13,6 @@
 
 <body>
   <section id="content">
-<<<<<<< HEAD
-
-=======
->>>>>>> e8a0f0c7888e5a2940dbfaa2091dfb81bc2f3ad2
 
     <%= form_for(@concert, html: {multipart: true}) do |f| %>
       
@@ -24,16 +20,10 @@
         <h2> Errors: </h2>
         
           <% @concert.errors.full_messages.each do |message| %>
-<<<<<<< HEAD
             <li> <%= message %></li>
           <% end%>
         </ul>
       <% end %>
-=======
-            <%= message %><br>
-          <% end%> 
-      <% end %></div>
->>>>>>> e8a0f0c7888e5a2940dbfaa2091dfb81bc2f3ad2
       
       <h2 class="p5 top-5">Information</h2>
       <div class="p">    

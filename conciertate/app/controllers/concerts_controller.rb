@@ -46,13 +46,13 @@ class ConcertsController < ApplicationController
         render :show
     end
 
-    def top10
-        likes_concert = Hash.new
-        likes_concert[@concert.likes] = @concert.band
-        likes_concert.sort.reverse
-        length = likes_concert.length
-        better_concerts = likes_concert.delete_if{|key,value| key.length > 10}
-    end
+    #def top10
+     #   likes_concert = Hash.new
+      #  likes_concert[@concert.likes] = @concert.band
+       # likes_concert.sort.reverse
+        #length = likes_concert.length
+        #better_concerts = likes_concert.delete_if{|key,value| key.length > 10}
+    #end
 
     private # para aceptar solo los parametros que nos interesa o se quiere controlar
     def concert_params
