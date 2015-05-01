@@ -11,8 +11,8 @@ body {
 nav {
 	height: auto;
 	width: 100%;
-	background-image: url("slider.png");
-	background-size: 100%;
+	background: url("slider.png");
+    background-size: 900px 600px;
 }
 
 .ic {border:0;float:right;background:#fff;color:#f00;width:50%;line-height:10px;font-size:10px;margin:-220% 0 0 0;overflow:hidden;padding:0}
@@ -99,7 +99,7 @@ ul.menu li a {font-size:18px; line-height:24px; color:#fff; text-transform:upper
 ul.menu li a:hover , ul.menu li.current a { color:#ef6f53; }
 
 /*********************************content*************************************/
-#content {width:960px; margin:0 auto; padding:0px 0px 55px 0; position:relative;}
+#content {width:100%; margin-left:200px; position:relative; padding:0px 0px 55px 0; }
 
 
 .box-1 a {background:url(../images/marker-2.gif) right 13px no-repeat #0c0c0c; font-size:26px; line-height:32px; color:#636f6f; letter-spacing:-1px; display:block; padding:5px 26px 12px 25px;}

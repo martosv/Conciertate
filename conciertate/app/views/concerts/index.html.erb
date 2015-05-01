@@ -1,9 +1,9 @@
 <body>
 
     <nav>
-        <div class='slider'>
+        <div class='fondo'>
             <% @concerts.each do |concert|%>
-                <% if concert.date === Time.now.strftime("%d/%m/%Y") %>
+                <% if concert.date === Date.today %>
                     <br><br>
                     <h2 class='white'><%= concert.band %></h2>
                 <% end %>
