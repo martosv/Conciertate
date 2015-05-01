@@ -1,6 +1,12 @@
 <body>
 
-    <nav>
+    <header>
+        <div align="middle">
+            <a href="http://localhost:3000/concerts"><img src="logo.png" alt="Concertiate" title="Welcome to concertiate!"/>
+        </div>
+    </header>
+        
+    <!--<nav>    
         <div class='slider'>
             <% @concerts.each do |concert|%>
                 <% if concert.date === Time.now.strftime("%d/%m/%Y") %>
@@ -9,13 +15,13 @@
                 <% end %>
             <% end %>
         <div>
-    </nav>
+    </nav>-->
     
     <section id="content"><div class="ic"></div>
         <div class="container_12 top-1">
         
             <div class="grid_4">
-                <h2 class="p2">Welcome to Conciertate!</h2>
+                <h2 class="p2">What is Conciertate?</h2>
                 
                 <p class="text-1 top-2 p3">The new app for music lovers</p>
                 <p>Conciertate show you a concerts callendar for the next months</p>
