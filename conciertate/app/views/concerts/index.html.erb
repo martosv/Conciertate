@@ -116,10 +116,12 @@
             <% end %>
 
             <% hash2 = hash.sort_by {|x,y| y} %>
-            <% hash2.reverse! %>
-            <% better_concerts = hash2.delete_if{|key,value| hash2.length > 10} %>
-            <% better_concerts.each do |x, y| %>  
-                <li><%= x %> : <%= y %> likes </li>
+            <% hash3 = hash2.delete_if{ |key,value| hash2.length > 10} %>
+            <% better_concerts = hash3.reverse! %>
+            <% better_concerts.each do |a, b| %>  
+               
+            <li><%= a %> : <%= b %> likes </li>
+
             <%end%>
     </div> 
     </sidebar>     
