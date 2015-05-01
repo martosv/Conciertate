@@ -8,6 +8,7 @@
 <body>
   <section id="content"><div class="ic"></div>
 
+
     <%= form_for(@concert, html: {multipart: true}) do |f| %>
       
       <% if @concert.errors.any? %>
@@ -43,13 +44,13 @@
           <li>
             <p>
               <%= f.label :date %><br>
-              <%= f.text_area :date %>
+              <%= f.date_select :date %>
             </p>
           </li>
           <li>
             <p>
               <%= f.label :price %><br>
-              <%= f.text_area :price %>
+              <%= f.text_area :price %> $
             </p>
           </li>
           <li>
